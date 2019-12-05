@@ -7,12 +7,16 @@ import { ProfileService } from "../../services/profile.service";
 })
 export class ProfileComponent implements OnInit {
    profile: any;
+   repos: any;
 
   constructor(private profileService: ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile => {
      
       this.profile = profile;
     });
+    this.profileService.getProfileRepos().subscribe(repos =>{
+      this.repos = repos;
+    })
   }
 
   ngOnInit() {}

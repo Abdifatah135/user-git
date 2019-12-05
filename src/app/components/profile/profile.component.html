@@ -1,15 +1,48 @@
 <div *ngIf="profile">
   <div class="panel panel-default">
     <div class="panel-heading">
-      {{ profile.name}}<small>{{ profile.login }}</small>
+      {{ profile.name }}<small>{{ profile.login }}</small>
       <span *ngIf="profile.company">, Works at {{ profile.comapny }}</span>
     </div>
     <div class="panel-body">
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="{{profile.avatar_url}}" alt="">
-            </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <img
+            src="{{ profile.avatar_url }}"
+            class="img-circle img-responsive"
+            alt="profile image"
+          />
         </div>
+        <div class="col-sm-5">
+          <ul class="list-group">
+            <li class="list-group-item" *ngIf="profile.bio">
+              {{ profile.bio }}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <div>
+            <p>
+              <a href="{{ profile.html_url }}" class="btn btn-success"
+                >View Profile</a
+              >
+            </p>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-body">Repos</h3>
+              </div>
+              <div class="panel-body" *ngFor="let repo of repos">
+                <p>
+                   {{repo.name}}  <a href="{{repo.html_url}}" class="btn btn-sm btn-warning">View repos</a>
+                </p>
+                <p>
+                    {{repo.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
