@@ -53,12 +53,13 @@
                   <div class="panel-heading">
                     <h3 class="panel-body">Repos</h3>
                   </div>
-                  <div class="panel-body" *ngFor="let Repos of repos">
+                  <div class="panel-body" *ngFor="let repos of repos">
+                    <p>{{repos.name}}</p>
                     <p>
-                       {{Repos.name}}  <a href="{{repos.html_url}}" class="btn btn-sm btn-warning">View repos</a>
+                       <a href="{{repos.html_url}}" class="btn btn-sm btn-warning">View repos</a>
                     </p>
                     <p>
-                        {{Repos.description}}
+                        {{repos.description}}
                     </p>
                   </div>
                 </div>
