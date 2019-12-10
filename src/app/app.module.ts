@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {FormsModule } from "@angular/forms";
 import { DateCountPipe } from './date-count.pipe';
+import { StrikethroughDirective } from './strikethrough.directive';
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    DateCountPipe
+    DateCountPipe,
+    StrikethroughDirective
     
   ],
   imports: [
